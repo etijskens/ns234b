@@ -8,16 +8,13 @@ sys.path.insert(0,'.')
 import ns234b
 
 
-def test_hello_noargs():
-    """Test for ns234b.hello()."""
-    s = ns234b.hello()
-    assert s == "Hello world"
-
-
-def test_hello_me():
-    """Test for ns234b.hello('me')."""
-    s = ns234b.hello('me')
-    assert s == "Hello me"
+def test_distance():
+    p = (0,0,0)
+    assert ns234b.distance(p,p) == 0
+    q = (1,0,0)
+    assert ns234b.distance(p,q) == 1
+    q = (2,0,0)
+    assert ns234b.distance(p,q) == 2
 
 
 # ==============================================================================
@@ -27,7 +24,7 @@ def test_hello_me():
 # that the source directory is on the path
 # ==============================================================================
 if __name__ == "__main__":
-    the_test_you_want_to_debug = test_hello_noargs
+    the_test_you_want_to_debug = test_distance
 
     print("__main__ running", the_test_you_want_to_debug)
     the_test_you_want_to_debug()
